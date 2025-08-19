@@ -1,35 +1,16 @@
-# pip install pytest-cov
+def verificar_aprovacao_unica(media: float) -> str:
+    # Valida se a entrada é um número (int ou float)
+    if not isinstance(media, (int, float)):
+        raise TypeError("A média deve ser um número (inteiro ou float).")
 
-def verificar_aprovacao(notas: list[float]) -> float:
+    # Valida os limites da média
+    if not 0 <= media <= 10:
+        raise ValueError("A média deve estar entre 0 e 10.")
 
-    # Validando se há uma lista
-    if not isinstance(notas, list):
-        raise TypeError("Nota invalida")
-    
-    # Validando se a lista é vazia
-    if len(notas) == 0:
-        raise ValueError("Não é permitido uma lista vazia")
-
-  
-    for nota in notas:  
-        # Validando se todos os elementos da lista são numeros (int e float)
-        if not isinstance(nota, (int, float)):
-            raise TypeError("Não é permitido uma string na lista")
-        
-        # Validando os limites da nota 
-        if nota > 10:
-            raise ValueError("Limite da nota [0, 10]")
-        
-        if nota < 0:
-            raise ValueError("Limite da nota [0, 10]")
-
-        # Validando as aprovações
-        if nota >= 7.0:
-            return "APROVADO"
-        
-        if nota < 6.9 and nota > 5.0:
-            return "RECUPERAÇÃO"
-        
-        if nota < 4.9:
-            return "REPROVADO"
-
+    # Verifica a aprovação
+    if media >= 7.0:
+        return "APROVADO"
+    elif media >= 5.0:  # O critério original (nota < 6.9 and nota > 5.0) é problemático. Esta é uma versão mais robusta.
+        return "RECUPERAÇÃO"
+    else:
+        return "REPROVADO"
