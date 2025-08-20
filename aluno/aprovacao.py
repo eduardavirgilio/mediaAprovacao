@@ -32,4 +32,3 @@ def verificar_aprovacao(notas: list[float]) -> float:
         
         if nota < 4.9:
             return "REPROVADO"
-

@@ -1,4 +1,4 @@
-from escola.aluno import calcular_media
+from aluno.aluno import calcular_media
 
 def test_calcular_media_entrada_basica_sem_erro():
 

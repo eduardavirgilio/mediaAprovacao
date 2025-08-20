@@ -1,5 +1,5 @@
 import pytest
-from escola.aluno import calcular_media
+from aluno.aluno import calcular_media
 
 # lista vazia -------------------------------------
 def test_calcular_media_lista_vazia():

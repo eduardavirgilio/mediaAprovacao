@@ -40,4 +40,3 @@ def test_num_maiordeDez():
     # Executando a função e esperando erro
     with pytest.raises(ValueError, match="Limite da nota \[0, 10\]"):
         verificar_aprovacao(entrada) 
-

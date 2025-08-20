@@ -1,6 +1,6 @@
 
 import pytest
-from escola.aluno import calcular_media
+from aluno.aluno import calcular_media
 
 @pytest.mark.parametrize("entrada, situacao_esperada", 
                          [
